@@ -10,7 +10,11 @@ RUN pip install -r /requirements.txt
 
 RUN apt-get update && apt-get install g++ -y
 
-RUN cd /host/pointnet2/ && python setup.py install
+COPY pointnet2 /code/pointnet2
+COPY ops_pytorch /code/ops_pytorch
+COPY *.py /code/
 
-RUN cd /host/ops_pytorch/fused_conv_random_k && python setup.py install
-RUN cd /host/ops_pytorch/fused_conv_select_k && python setup.py install
+RUN cd /code/pointnet2/ && python setup.py install
+
+RUN cd /code/ops_pytorch/fused_conv_random_k && python setup.py install
+RUN cd /code/ops_pytorch/fused_conv_select_k && python setup.py install

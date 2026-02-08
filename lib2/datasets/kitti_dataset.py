@@ -44,7 +44,7 @@ class KittiDataset(torch_data.Dataset):
         img_file = os.path.join(self.image_dir, '%06d.png' % idx)
         assert os.path.exists(img_file)
         im = Image.open(img_file).convert('RGB')
-        im = np.array(im).astype(np.float)
+        im = np.array(im).astype(np.float64)
         im = im / 255.0
         im -= self.mean
         im /= self.std
@@ -52,7 +52,7 @@ class KittiDataset(torch_data.Dataset):
         # ~[-2,2]
         # im = im[:, :, ::-1]
         # make same size padding with 0
-        imback = np.zeros([384, 1280, 3], dtype = np.float)
+        imback = np.zeros([384, 1280, 3], dtype = np.float64)
         imback[:im.shape[0], :im.shape[1], :] = im
 
         return imback  # (H,W,3) RGB mode

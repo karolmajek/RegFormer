@@ -13,6 +13,7 @@ cachetools
 certifi
 cffi
 chardet
+click
 coloredlogs
 comm
 contourpy
@@ -53,6 +54,7 @@ jupyter_server_terminals
 jupyterlab-pygments
 jupyterlab-widgets
 kiwisolver
+laspy[lazrs]
 Markdown
 MarkupSafe
 matplotlib
@@ -66,7 +68,7 @@ nest-asyncio
 nibabel
 notebook
 notebook_shim
-numpy
+numpy<2
 oauthlib
 open3d
 opencv-python
@@ -85,6 +87,7 @@ protobuf
 psutil
 ptyprocess
 pure-eval
+pypcd4
 pyasn1
 pyasn1-modules
 pycosat
@@ -134,3 +137,4 @@ websocket-client
 Werkzeug
 widgetsnbextension
 zipp
+openpyxl    

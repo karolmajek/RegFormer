@@ -50,7 +50,7 @@ def apply_transform(pts, trans):
     pts = pts @ R.T + T
     return pts
 
-def limited_points(points: np.float, npoints: int = 8192, choose: bool = False, fov_filter: bool = False) -> np.float:
+def limited_points(points: np.ndarray, npoints: int = 8192, choose: bool = False, fov_filter: bool = False) -> np.ndarray:
     """
 
     :param points
@@ -93,7 +93,7 @@ def limited_points(points: np.float, npoints: int = 8192, choose: bool = False, 
 
 
 
-def filter_points(points: np.float, npoints: int = 8192, fov_filter=True, furthest: int = 40) -> np.float:
+def filter_points(points: np.ndarray, npoints: int = 8192, fov_filter=True, furthest: int = 40) -> np.ndarray:
     """
 
     :param points: np.array [n,3] or [n,4]
